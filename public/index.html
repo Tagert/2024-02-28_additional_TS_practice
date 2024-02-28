@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TS additional practice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header-section">
+      <div class="container">
+        <div class="header-container">
+          <div class="input-side">
+            <select name="types" id="selectType">
+              <option id="platformGame" value="platformGame">
+                Platform game
+              </option>
+              <option id="boardGame" value="boardGame">Board game</option>
+            </select>
+
+            <div class="id-card input-card">
+              <label for="idNum">Id:</label>
+              <input id="idNum" type="number" min="0" />
+            </div>
+
+            <div class="title-card input-card">
+              <label for="title">Title:</label>
+              <input id="title" type="text" />
+            </div>
+
+            <div class="release-year-card input-card">
+              <label for="releaseYear">Year of release:</label>
+              <input id="releaseYear" type="number" min="1950" />
+            </div>
+
+            <div class="platform-card input-card">
+              <label for="platform">Platform:</label>
+              <select name="platform" id="platform">
+                <option id="pc" value="pcGames">PC</option>
+                <option id="console" value="consoleGames">Console</option>
+                <option id="mobile" value="mobileGames">Mobile</option>
+              </select>
+            </div>
+
+            <div class="number-players-card input-card">
+              <label for="numberOfPlayers">Number of players:</label>
+              <input id="numberOfPlayers" type="number" min="0" />
+            </div>
+
+            <div class="button-card">
+              <button id="btn">Click me</button>
+            </div>
+          </div>
+
+          <div class="title-side">
+            <h1>Welcome to world of games</h1>
+            <p>Choose / Add your game:</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="sort-section">
+      <div class="container"></div>
+    </section>
+
+    <main class="main-section">
+      <div class="container">
+        <div class="main-container">
+          <div class="empty-background"></div>
+
+          <div class="game-card-container">
+            <!-- <div class="game-card">
+              <h2>1: tilte title title</h2>
+              <p>year: 2004</p>
+              <p>platform</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.header-section {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  background-color: bisque;
+}
+.header-section .header-container {
+  display: flex;
+  justify-content: space-between;
+}
+.header-section .header-container .title-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 60%;
+  padding: 1rem;
+}
+.header-section .header-container .input-side {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  gap: 0.9rem;
+  padding: 1rem;
+}
+.header-section .header-container .input-side label {
+  font-size: 0.85rem;
+}
+.header-section .header-container .input-side input,
+.header-section .header-container .input-side select {
+  height: 2rem;
+  border: 0.1rem solid black;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+  outline: none;
+}
+.header-section .header-container .input-side input::-moz-placeholder, .header-section .header-container .input-side select::-moz-placeholder {
+  padding-left: 0.5rem;
+}
+.header-section .header-container .input-side input::placeholder,
+.header-section .header-container .input-side select::placeholder {
+  padding-left: 0.5rem;
+}
+.header-section .header-container .input-side #platform {
+  min-width: 11.486rem;
+}
+.header-section .header-container .input-side .input-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-section .header-container .input-side .platform-card {
+  display: flex;
+  justify-content: space-between;
+}
+.header-section .header-container .input-side .number-players-card {
+  display: none;
+}
+.header-section .header-container .input-side .button-card {
+  display: flex;
+}
+.header-section .header-container .input-side .button-card #btn {
+  align-items: center;
+  justify-content: center;
+  min-width: 9rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #161a30;
+  padding: 0.4rem;
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+  color: #161a30;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+}
+.header-section .header-container .input-side .button-card #btn:hover {
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, rgb(49, 48, 77) 0%, rgb(22, 26, 48) 120%);
+}
+
+.sort-section {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  background-color: transparent;
+}
+
+.main-section {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  min-height: 43vh;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  background-color: transparent;
+}
+.main-section .main-container {
+  display: flex;
+}
+.main-section .main-container .empty-background {
+  min-height: 50vh;
+  width: 100%;
+  flex-basis: 40%;
+}
+.main-section .main-container .game-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  flex-basis: 60%;
+  padding: 1rem;
+}
+.main-section .main-container .game-card-container .game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 15rem;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  padding: 1rem;
+}/*# sourceMappingURL=style.css.map */

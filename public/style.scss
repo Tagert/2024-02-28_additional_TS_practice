@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.header-section {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  background-color: bisque;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+
+    .title-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex-basis: 60%;
+      padding: 1rem;
+    }
+
+    .input-side {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 40%;
+      gap: 0.9rem;
+      padding: 1rem;
+
+      label {
+        font-size: 0.85rem;
+      }
+
+      input,
+      select {
+        height: 2rem;
+        border: 0.1rem solid black;
+        border-radius: 0.4rem;
+        padding: 0.4rem;
+        box-shadow: 0.15rem 0.15rem 0.15rem black;
+        outline: none;
+
+        &::placeholder {
+          padding-left: 0.5rem;
+        }
+      }
+      #platform {
+        min-width: 11.486rem;
+      }
+
+      .input-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .platform-card {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .number-players-card {
+        display: none;
+      }
+
+      .button-card {
+        display: flex;
+
+        #btn {
+          align-items: center;
+          justify-content: center;
+          min-width: 9rem;
+          border-radius: 0.4rem;
+          border: 0.1rem solid #161a30;
+          padding: 0.4rem;
+          box-shadow: 0.15rem 0.15rem 0.15rem black;
+          color: #161a30;
+          background: linear-gradient(
+            270deg,
+            rgba(227, 225, 217, 1) 0%,
+            rgba(242, 239, 229, 1) 100%
+          );
+
+          &:hover {
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(
+              90deg,
+              rgba(49, 48, 77, 1) 0%,
+              rgba(22, 26, 48, 1) 120%
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+.sort-section {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  background-color: transparent;
+}
+
+.main-section {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  min-height: 43vh;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  background-color: transparent;
+
+  .main-container {
+    display: flex;
+
+    .empty-background {
+      min-height: 50vh;
+      width: 100%;
+      flex-basis: 40%;
+    }
+
+    .game-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-basis: 60%;
+      padding: 1rem;
+
+      .game-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        width: 15rem;
+        border: 0.1rem solid grey;
+        border-radius: 0.4rem;
+        padding: 1rem;
+      }
+    }
+  }
+}
