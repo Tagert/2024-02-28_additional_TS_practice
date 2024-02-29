@@ -20,7 +20,7 @@
 
             <div class="id-card input-card">
               <label for="idNum">Id:</label>
-              <input id="idNum" type="number" min="0" />
+              <input id="idNum" type="number" min="0" value="100" disabled />
             </div>
 
             <div class="title-card input-card">
@@ -54,28 +54,44 @@
 
           <div class="title-side">
             <h1>Welcome to world of games</h1>
-            <p>Choose / Add your game:</p>
+            <p>Add your game:</p>
           </div>
         </div>
       </div>
     </header>
 
     <section class="sort-section">
-      <div class="container"></div>
+      <div class="container">
+        <div class="sort-container">
+          <div class="sort-description">
+            <p>Sort your games:</p>
+          </div>
+
+          <div class="sort-buttons">
+            <button id="allGameSort">All Games</button>
+            <button id="platformGameSort">Platform Games</button>
+            <button id="boardGameSort">Board Games</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <main class="main-section">
       <div class="container">
         <div class="main-container">
-          <div class="empty-background"></div>
-
-          <div class="game-card-container">
-            <!-- <div class="game-card">
-              <h2>1: tilte title title</h2>
-              <p>year: 2004</p>
-              <p>platform</p>
-            </div> -->
+          <div class="empty-background">
+            <div class="background-title">
+              <h2>Play with your friends</h2>
+            </div>
+            <div class="image-box">
+              <img
+                src="../assets/friend_background.jpg"
+                alt="Friend background"
+              />
+            </div>
           </div>
+
+          <div class="game-card-container"></div>
         </div>
       </div>
     </main>

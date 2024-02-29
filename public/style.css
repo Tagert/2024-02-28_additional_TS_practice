@@ -61,7 +61,7 @@ body {
   height: 2rem;
   border: 0.1rem solid black;
   border-radius: 0.4rem;
-  padding: 0.4rem;
+  padding: 0.4rem 1rem;
   box-shadow: 0.15rem 0.15rem 0.15rem black;
   outline: none;
 }
@@ -73,7 +73,7 @@ body {
   padding-left: 0.5rem;
 }
 .header-section .header-container .input-side #platform {
-  min-width: 11.486rem;
+  min-width: 12.6875rem;
 }
 .header-section .header-container .input-side .input-card {
   display: flex;
@@ -116,6 +116,32 @@ body {
   border-radius: 0.4rem;
   background-color: transparent;
 }
+.sort-section .sort-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.sort-section .sort-container .sort-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.sort-section .sort-container .sort-buttons button {
+  align-items: center;
+  justify-content: center;
+  min-width: 9rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #161a30;
+  padding: 0.4rem;
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+  color: #161a30;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+}
+.sort-section .sort-container .sort-buttons button:hover {
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, rgb(49, 48, 77) 0%, rgb(22, 26, 48) 120%);
+}
 
 .main-section {
   display: flex;
@@ -133,9 +159,26 @@ body {
   display: flex;
 }
 .main-section .main-container .empty-background {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   min-height: 50vh;
   width: 100%;
+  padding: 1rem;
   flex-basis: 40%;
+}
+.main-section .main-container .empty-background .background-title h2 {
+  text-align: center;
+}
+.main-section .main-container .empty-background .image-box {
+  display: flex;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+.main-section .main-container .empty-background .image-box img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.85;
 }
 .main-section .main-container .game-card-container {
   display: flex;
@@ -148,9 +191,28 @@ body {
 .main-section .main-container .game-card-container .game-card {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: center;
   gap: 0.9rem;
-  width: 15rem;
+  width: 20rem;
+  height: 12rem;
   border: 0.1rem solid grey;
   border-radius: 0.4rem;
   padding: 1rem;
+}
+.main-section .main-container .game-card-container .game-card .remove-btn {
+  align-items: center;
+  justify-content: center;
+  min-width: 9rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #161a30;
+  padding: 0.4rem;
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+  color: #161a30;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+}
+.main-section .main-container .game-card-container .game-card .remove-btn:hover {
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, rgb(49, 48, 77) 0%, rgb(22, 26, 48) 120%);
 }/*# sourceMappingURL=style.css.map */

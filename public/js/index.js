@@ -10,7 +10,11 @@ const titleInput = document.getElementById("title");
 const releaseYearInput = document.getElementById("releaseYear");
 const numberOfPlayersInput = document.getElementById("numberOfPlayers");
 const platformSelect = document.getElementById("platform");
-// Changing inputs by type
+const btn = document.getElementById("btn");
+const allGameSort = document.getElementById("allGameSort");
+const platformGameSort = document.getElementById("platformGameSort");
+const boardGameSort = document.getElementById("boardGameSort");
+const mainInventoryArray = [];
 selectType.addEventListener("change", () => {
     const selectedValue = selectType.value;
     numberOfPlayersDiv.style.display = "none";
@@ -22,53 +26,36 @@ selectType.addEventListener("change", () => {
         numberOfPlayersDiv.style.display = "flex";
     }
 });
-// Type testing
-const pcGameNo1 = {
-    id: 1,
-    title: "string",
-    releaseYear: 2010,
-    platform: "PC",
-    type: "PC game",
-};
-const boardGameNo1 = {
-    id: 2,
-    title: "string",
-    releaseYear: 2010,
-    numberOfPlayers: 5,
-    type: "Board game",
-};
-const mainInventoryArray = [];
+let gameIdCounter = 100;
 const createGameObject = () => {
     const selectedValue = selectType.value;
+    let newId;
     if (selectedValue === "platformGame") {
+        newId = gameIdCounter++;
         const game = {
-            id: Number(idInput.value),
+            id: newId,
             title: titleInput.value,
             releaseYear: Number(releaseYearInput.value),
             type: "PC game",
             platform: platformSelect.value,
         };
+        idInput.value = (newId + 1).toString();
         return game;
     }
     else if (selectedValue === "boardGame") {
+        newId = gameIdCounter++;
         const game = {
-            id: Number(idInput.value),
+            id: newId,
             title: titleInput.value,
             releaseYear: Number(releaseYearInput.value),
             type: "Board game",
             numberOfPlayers: parseInt(numberOfPlayersInput.value),
         };
+        idInput.value = (newId + 1).toString();
         return game;
     }
     throw new Error("Invalid game type");
 };
-const btn = document.getElementById("btn");
-btn.addEventListener("click", () => {
-    const newGame = createGameObject();
-    addGameToInventory(newGame);
-    generateGameCard();
-    console.log(newGame);
-});
 //
 const addGameToInventory = (game) => {
     mainInventoryArray.push(game);
@@ -81,8 +68,11 @@ const createGameCard = (game) => {
     const titleHeading = document.createElement("h2");
     titleHeading.innerText = game.title;
     card.append(titleHeading);
+    const idParagraph = document.createElement("p");
+    idParagraph.innerText = `Unique identifier: ${game.id.toString()}`;
+    card.append(idParagraph);
     const yearParagraph = document.createElement("p");
-    yearParagraph.innerText = `Year: ${game.releaseYear}`;
+    yearParagraph.innerText = `Release Year: ${game.releaseYear}`;
     card.append(yearParagraph);
     if ("numberOfPlayers" in game) {
         const playersParagraph = document.createElement("p");
@@ -94,16 +84,57 @@ const createGameCard = (game) => {
         platformParagraph.innerText = `Platform: ${game.platform}`;
         card.append(platformParagraph);
     }
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("remove-btn");
+    deleteButton.innerText = "Remove a card";
+    card.append(deleteButton);
+    deleteButton.addEventListener("click", () => {
+        removeGameFromInventory(game);
+        renderGameCards();
+    });
     return card;
 };
-const renderGameCards = () => {
+const sortGamesByType = (type) => {
+    let sortedGames = [];
+    if (type === "all") {
+        sortedGames = [...mainInventoryArray];
+    }
+    else if (type === "platform") {
+        sortedGames = mainInventoryArray.filter((game) => "platform" in game);
+    }
+    else if (type === "board") {
+        sortedGames = mainInventoryArray.filter((game) => "numberOfPlayers" in game);
+    }
+    renderGameCards(sortedGames);
+};
+const renderGameCards = (games = mainInventoryArray) => {
     gameCardContainer.innerHTML = "";
-    mainInventoryArray.forEach((game) => {
+    games.forEach((game) => {
         const card = createGameCard(game);
         gameCardContainer.appendChild(card);
     });
 };
+const removeGameFromInventory = (game) => {
+    const findIndexToRemove = mainInventoryArray.findIndex((g) => g.id === game.id);
+    if (findIndexToRemove !== -1) {
+        mainInventoryArray.splice(findIndexToRemove, 1);
+    }
+};
 const generateGameCard = () => {
     renderGameCards();
 };
+btn.addEventListener("click", () => {
+    const newGame = createGameObject();
+    addGameToInventory(newGame);
+    generateGameCard();
+});
+allGameSort.addEventListener("click", () => {
+    sortGamesByType("all");
+});
+platformGameSort.addEventListener("click", () => {
+    sortGamesByType("platform");
+});
+boardGameSort.addEventListener("click", () => {
+    sortGamesByType("board");
+});
 export {};
